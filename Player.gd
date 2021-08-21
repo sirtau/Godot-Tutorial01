@@ -8,6 +8,7 @@ var gravity : int = 800
 
 var vel : Vector2 = Vector2()
 
+onready var audioPlayer : Node = get_node("/root/MainScene/Camera2D/AudioPlayer")
 onready var ui : Node = get_node("/root/MainScene/CanvasLayer/UI")
 onready var sprite : Sprite = get_node("Sprite")
 
@@ -37,3 +38,4 @@ func die ():
 func collect_coin (value):
 	score += value
 	ui.set_score_text(score)
+	audioPlayer.play_coin_sfx()
